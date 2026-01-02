@@ -135,3 +135,28 @@ Ensure `KEY_OVERRIDE_ENABLE = yes` is in `rules.mk` and firmware is compiled and
 
 ### Compilation fails
 Ensure ARM toolchain is in PATH (see Option 2 above).
+
+### Top-left key produces § (section sign) instead of ` (backtick)
+
+**Problem**: The keyboard produces § and ± instead of ` and ~
+
+**Cause**: macOS has incorrectly identified the keyboard as ISO layout (European) instead of ANSI layout (U.S.). This causes macOS to interpret key scancodes differently.
+
+**Solution**: Delete macOS keyboard type cache to force re-detection
+
+1. Disconnect the keyboard from your Mac
+2. Open Terminal and run:
+   ```bash
+   sudo rm /Library/Preferences/com.apple.keyboardtype.plist
+   ```
+3. Restart your Mac
+4. Plug in the keyboard
+5. If "Keyboard Setup Assistant" appears, follow the prompts
+6. Test that ` and ~ now work correctly
+
+**Alternative**: Manually run Keyboard Setup Assistant:
+```bash
+/System/Library/CoreServices/KeyboardSetupAssistant.app/Contents/MacOS/KeyboardSetupAssistant
+```
+
+This issue typically occurs when moving the keyboard between different Macs.
