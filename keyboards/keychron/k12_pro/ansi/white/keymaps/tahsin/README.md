@@ -56,16 +56,33 @@ Make it executable: `chmod +x compile.sh`, then run `./compile.sh`
 
 ## Flashing
 
-1. Compile the firmware (see above)
-2. Open QMK Toolbox
-3. Load the generated `.bin` file from the build output
-4. Put keyboard in bootloader mode (usually Fn + Esc or physical reset button)
-5. Click "Flash" in QMK Toolbox
+### Step-by-step flashing instructions
 
-The compiled firmware will be at:
-```
-.build/keychron_k12_pro_ansi_white_tahsin.bin
-```
+1. **Compile the firmware** (see compilation section above)
+   - The compiled firmware will be at: `.build/keychron_k12_pro_ansi_white_tahsin.bin`
+
+2. **Prepare the keyboard:**
+   - Unplug the keyboard from your computer
+   - Set the mode switch to **cable mode** (physical switch on the keyboard)
+   - Remove the **spacebar keycap** (the reset button is underneath)
+
+3. **Enter DFU (bootloader) mode:**
+   - Press and hold the **reset button** (under the spacebar)
+   - While holding reset, plug in the USB cable
+   - Release the reset button after plugging in
+
+4. **Flash with QMK Toolbox:**
+   - Open QMK Toolbox application
+   - Verify that it shows **"Put Your Keyboard into DFU (Bootloader) Mode"** message (this confirms the keyboard is in bootloader mode)
+   - Click **"Open"** and select the compiled `.bin` file (`.build/keychron_k12_pro_ansi_white_tahsin.bin`)
+   - Click **"Flash"**
+   - Wait for the flashing process to complete
+   - The keyboard will automatically restart with the new firmware
+
+5. **Test the keyboard:**
+   - Replace the spacebar keycap
+   - Test Caps Lock: tap for ESC, hold for Control
+   - Test key overrides: Ctrl+H/J/K/L for arrows
 
 ## Important Notes
 
