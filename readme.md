@@ -8,6 +8,11 @@
 
 This is a keyboard firmware based on the [tmk\_keyboard firmware](https://github.com/tmk/tmk_keyboard) with some useful features for Atmel AVR and ARM controllers, and more specifically, the [OLKB product line](https://olkb.com), the [ErgoDox EZ](https://ergodox-ez.com) keyboard, and the Clueboard product line.
 
+## Custom Keymaps
+
+* [Keychron V4 ANSI - tahsin](/keyboards/keychron/v4/ansi/keymaps/tahsin/) (branch: `v4-wired`)
+* [Keychron K12 Pro ANSI White - tahsin](/keyboards/keychron/k12_pro/ansi/white/keymaps/tahsin/) (branch: `keychron-wireless`)
+
 ## Documentation
 
 * [See the official documentation on docs.qmk.fm](https://docs.qmk.fm)
